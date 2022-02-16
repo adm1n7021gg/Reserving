@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+       layout:decorate="~{Layout/homeLayout}">
+<head>
+<meta charset="utf-8" />
+<title>新規登録ページ</title>
+    <link th:href="@{/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css}" rel="stylesheet"></link>
+    <script th:src="@{/webjars/jquery/1.11.1/jquery.min.js}"></script>
+    <script th:src="@{/webjars/bootstrap/3.3.7-1/js/bootstrap.min.js}"></script>
+</head>
+<body>
+  <nav class="navbar navbar-inverse">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/meetings">商品管理デモ</a>
+      </div>
+    </div>
+    </nav>
+  <div class="container">
+    <div class="card card-primary mb-3">
+          <div class="card-header">
+            <h5 class="card-title">リクエスト新規</h5>
+          </div>
+        <div class="card-body">
+              <form th:method="post" th:action="@{/meetings}" th:object="${meeting}">
+                <div class="form-group row">
+                    <label class="col-md-2 control-label">部屋番号</label>
+                    <div class="col-md-10">
+                      <input class="form-control" type="text" name="roomid" th:value="*{roomid}" />
+                      <div class="text-danger" th:if="${#fields.hasErrors('roomid')}" th:errors="*{roomid}"></div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-md-2 control-label">ID</label>
+                    <div class="col-md-10">
+                      <input class="form-control" type="text" name="id" th:value="*{id}"/>
+                      <div class="text-danger" th:if="${#fields.hasErrors('id')}" th:errors="*{id}"></div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-md-2 control-label">利用日</label>
+                    <div class="col-md-10">
+                      <input class="form-control" type="text" name="day" th:value="*{day}" />
+                      <div class="text-danger" th:if="${#fields.hasErrors('day')}" th:errors="*{day}"></div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-md-2 control-label">利用者名</label>
+                    <div class="col-md-10">
+                      <input class="form-control" type="text" name="day" th:value="*{day}"/>
+                      <div class="text-danger" th:if="${#fields.hasErrors('day')}" th:errors="*{day}"></div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-md-2 control-label">利用予定人数</label>
+                    <div class="col-md-10">
+                      <input class="form-control" type="text" name="people" th:value="*{people}"/>
+                      <div class="text-danger" th:if="${#fields.hasErrors('people')}" th:errors="*{people}"></div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-md-2 control-label">連絡先</label>
+                    <div class="col-md-10">
+                      <input class="form-control" type="text" name="id" th:value="*{id}"/>
+                      <div class="text-danger" th:if="${#fields.hasErrors('id')}" th:errors="*{id}"></div>
+                    </div>
+                </div>                                
+                <div class="form-group row">
+                    <div class="offset-md-2 col-md-10">
+                      <button class="btn btn-primary">新規</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+      </div>
+    </div>
+</body>
+</html>

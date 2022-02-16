@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+       layout:decorate="~{Layout/homeLayout}">
+<head>
+<meta charset="utf-8" />
+<title>詳細ページ</title>
+    <link th:href="@{/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css}" rel="stylesheet"></link>
+    <script th:src="@{/webjars/jquery/1.11.1/jquery.min.js}"></script>
+    <script th:src="@{/webjars/bootstrap/3.3.7-1/js/bootstrap.min.js}"></script>
+</head>
+<body>
+	<nav class="navbar navbar-inverse">
+		<div class="container">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="/meetings">リクエスト詳細ページ</a>
+			</div>
+		</div>
+    </nav>
+	<div class="container">
+		<div class="card card-primary mb-3">
+  			<div class="card-header">
+  				<h5 class="card-title">リクエスト詳細</h5>
+  			</div>
+			<div class="card-body">
+		        <div th:object="${item}">
+		        	<div class="form-group row">
+		        		<label class="col-md-2">部屋番号</label>
+						<div class="col-md-10" th:text="*{roomid}"></div>
+		          	</div>
+		          	<div class="form-group row">
+		            	<label class="col-md-2 control-label">ID</label>
+		            	<div class="col-md-10 form-control-static" th:text="*{id}"></div>
+		          	</div>
+		          	<div class="form-group row">
+		            	<label class="col-md-2 control-label">利用日</label>
+		            	<div class="col-md-10 form-control-static" th:text="*{day}"></div>
+		          	</div>
+		        	<div class="form-group row">
+		        		<label class="col-md-2">利用者名</label>
+						<div class="col-md-10" th:text="*{name}"></div>
+		          	</div>
+		          	<div class="form-group row">
+		            	<label class="col-md-2 control-label">利用予定人数</label>
+		            	<div class="col-md-10 form-control-static" th:text="*{people}"></div>
+		          	</div>
+		          	<div class="form-group row">
+		            	<label class="col-md-2 control-label">連絡先</label>
+		            	<div class="col-md-10 form-control-static" th:text="*{phone}"></div>
+		          	</div>
+		          			          	
+				</div>
+			</div>
+		</div>
+    </div>
+</body>
+</html>
