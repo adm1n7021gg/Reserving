@@ -34,19 +34,14 @@ public class MeetingService {
 	}
 
 	//更新
-	@Transactional
-	public int update(Meeting meeting) {
-		 return meetingMapper.update(meeting);
-	}
-
-	//削除
+    public void update(Meeting meeting) {
+    	meetingMapper.update(meeting);
+    }
+    
 	@Transactional
 	public void delete(Long roomid) {
 		meetingMapper.delete(roomid);
 	}
 
-	public void save(Meeting meeting) {
-		// TODO 自動生成されたメソッド・スタブ
-		
+
 	}
-}

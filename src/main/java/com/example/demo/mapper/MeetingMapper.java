@@ -8,19 +8,13 @@ import com.example.demo.domain.Meeting;
 
 @Mapper
 public interface MeetingMapper {
-
-  //全件取得
-  public List<Meeting> findAll();
-
-  //select1件
-  public Meeting selectOne(Long roomid);
-  
-  //登録
-  public int insert(Meeting meeting);
-  
-  //１件登録
-  public int update(Meeting meeting);
-  
-  //削除処理
-  public int delete(Long roomid);
+	List<Meeting> findAll();
+	
+	 Meeting selectOne(Long roomid);
+	
+	void insert(Meeting meeting);
+	
+	void update(Meeting meeting);
+	
+	void delete(Long roomid);
 }

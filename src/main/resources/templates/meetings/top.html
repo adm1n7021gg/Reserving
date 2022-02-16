@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org"
        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-       layout:decorate="~{Layout/homeLayout}">
+       layout:decorate="Layout/homeLayout">
 <head>
     <meta http-equiv="Content-Type" content="text/html" charset="utf-8" />
     <link th:href="@{/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css}" rel="stylesheet"></link>
@@ -14,7 +14,7 @@
 	<nav class="navbar navbar-inverse">
 		<div class="container">
 			<div class="navbar-header">
-				<a class="navbar-brand" href="/items">商品管理デモ</a>
+				<a class="navbar-brand" href="/meetings">予約リクエスト管理デモ</a>
 			</div>
 		</div>
     </nav>
@@ -35,6 +35,7 @@
          				<th style="width: 20%">利用者名</th>
          				<th style="width: 30%">利用予定人数</th>
          				<th style="width: 20%">連絡先</th>
+         				<th style="width: 30%"></th>
        				</tr>
      			</thead>
      			<tbody>
