@@ -10,11 +10,11 @@ import com.example.demo.domain.Meeting;
 public interface MeetingMapper {
 	List<Meeting> findAll();
 	
-	 Meeting selectOne(Long roomid);
+	 Meeting selectOne(Long id);
 	
 	void insert(Meeting meeting);
 	
 	void update(Meeting meeting);
 	
-	void delete(Long roomid);
+	void delete(Long id);
 }

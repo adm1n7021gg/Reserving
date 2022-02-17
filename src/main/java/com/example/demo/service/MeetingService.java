@@ -23,8 +23,8 @@ public class MeetingService {
 
 	//一件取得
 	@Transactional
-	public Meeting selectOne(Long roomid) {
-		return meetingMapper.selectOne(roomid);
+	public Meeting selectOne(Long id) {
+		return meetingMapper.selectOne(id);
 	}
 
 	//登録
@@ -39,8 +39,8 @@ public class MeetingService {
     }
     
 	@Transactional
-	public void delete(Long roomid) {
-		meetingMapper.delete(roomid);
+	public void delete(Long id) {
+		meetingMapper.delete(id);
 	}
 
 
