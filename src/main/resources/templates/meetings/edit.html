@@ -25,7 +25,7 @@
   			</div>
   			
 			<div class="card-body">
-				<form th:action="@{/meetings/{roomid}(roomid=*{roomid})}" th:method="put" th:object="${meeting}">
+				<form th:action="@{/meetings/{id}(id=*{id})}" th:method="put" th:object="${meeting}">
 	        		<div class="form-group row">
 	          			<label class="col-md-2 control-label">部屋番号</label>
 	          			<div class="col-md-10">

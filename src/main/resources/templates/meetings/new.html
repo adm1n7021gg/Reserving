@@ -10,6 +10,7 @@
     <script th:src="@{/webjars/bootstrap/3.3.7-1/js/bootstrap.min.js}"></script>
 </head>
 <body>
+  <div layout:fragment="contents">
   <nav class="navbar navbar-inverse">
     <div class="container">
       <div class="navbar-header">
@@ -48,8 +49,8 @@
                 <div class="form-group row">
                     <label class="col-md-2 control-label">利用者名</label>
                     <div class="col-md-10">
-                      <input class="form-control" type="text" name="day" th:value="*{day}"/>
-                      <div class="text-danger" th:if="${#fields.hasErrors('day')}" th:errors="*{day}"></div>
+                      <input class="form-control" type="text" name="name" th:value="*{name}"/>
+                      <div class="text-danger" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></div>
                     </div>
                 </div>
                 <div class="form-group row">
@@ -62,8 +63,8 @@
                 <div class="form-group row">
                     <label class="col-md-2 control-label">連絡先</label>
                     <div class="col-md-10">
-                      <input class="form-control" type="text" name="id" th:value="*{id}"/>
-                      <div class="text-danger" th:if="${#fields.hasErrors('id')}" th:errors="*{id}"></div>
+                      <input class="form-control" type="text" name="phone" th:value="*{phone}"/>
+                      <div class="text-danger" th:if="${#fields.hasErrors('phone')}" th:errors="*{phone}"></div>
                     </div>
                 </div>                                
                 <div class="form-group row">
@@ -74,6 +75,7 @@
             </form>
         </div>
       </div>
+    </div>
     </div>
 </body>
 </html>

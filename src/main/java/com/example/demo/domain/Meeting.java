@@ -8,7 +8,7 @@ import javax.validation.constraints.Size;
 public class Meeting {
 
 	@NotBlank(message = "部屋番号を入力してください。")
-	private Long roomid;
+	private int roomid;
 
 	@NotBlank(message = "IDを入力してください。")
 	private Long id;
@@ -19,22 +19,21 @@ public class Meeting {
 	@NotBlank(message = "利用者名を入力してください。")
 	private String name;
 
-	@Min(value = 10, message = "2以上の利用予定人数を入力してください。")
-	@Max(value = 10000, message = "8以下の利用予定人数を入力してください。")
+	@Min(value = 1, message = "2以上の利用予定人数を入力してください。")
+	@Max(value = 10, message = "8以下の利用予定人数を入力してください。")
 	private int people;
 
 	@Size(max = 50, message = "連絡先を入力してください。")
 	private int phone;
 
 	/// SET-GET///
-	//利用希望部屋ID
-	public Long getRoomid() {
-		return id;
+	//部屋番号
+	public int getRoomid() {
+		return roomid;
 	}
-
-	//利用希望部屋ID
-	public void setRoomid(Long roomid) {
-		this.roomid = roomid;
+	//携帯番号
+	public void setRoomid(int roomid) {
+        this.roomid =roomid;
 	}
 	//お客様ID
 	public Long getId() {

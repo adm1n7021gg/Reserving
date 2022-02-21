@@ -31,7 +31,7 @@ public class MeetingController {
 	}
 
 	// 新規登録画面表示
-	@GetMapping("/meetings/new")
+	@GetMapping("new")
 	public String newMeeting(@ModelAttribute("meeting") Meeting meeting, Model model) {
 		return "meetings/new";
 	}
@@ -61,7 +61,7 @@ public class MeetingController {
 		} else {
 			meeting.setId(id);
 			meetingService.update(meeting);
-			return "redirect:/items";
+			return "redirect:/meetings";
 		}
 	}
 
@@ -79,6 +79,6 @@ public class MeetingController {
 	@DeleteMapping("{id}")
 	public String delete(@PathVariable Long id) {
 		meetingService.delete(id);
-		return "redirect:/meetingss";
+		return "redirect:/meetings";
 	}
 }
