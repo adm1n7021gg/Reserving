@@ -8,47 +8,47 @@ import javax.validation.constraints.Size;
 public class Meeting {
 
 	@NotBlank(message = "部屋番号を入力してください。")
-	private int roomid;
+	private String roomid;
 
 	@NotBlank(message = "IDを入力してください。")
-	private Long id;
+	private String id;
 
 	@NotBlank(message = "利用日を入力してください。")
-	private Long day;
+	private String day;
 
 	@NotBlank(message = "利用者名を入力してください。")
 	private String name;
 
 	@Min(value = 1, message = "2以上の利用予定人数を入力してください。")
 	@Max(value = 10, message = "8以下の利用予定人数を入力してください。")
-	private int people;
+	private Integer people;
 
 	@Size(max = 50, message = "連絡先を入力してください。")
-	private int phone;
+	private String phone;
 
 	/// SET-GET///
 	//部屋番号
-	public int getRoomid() {
+	public String getRoomid() {
 		return roomid;
 	}
 	//携帯番号
-	public void setRoomid(int roomid) {
+	public void setRoomid(String roomid) {
         this.roomid =roomid;
 	}
 	//お客様ID
-	public Long getId() {
+	public String getId() {
 		return id;
 	}
     //お客様ID
-	public void setId(Long id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 	//利用希望日
-	public Long getDay() {
+	public String getDay() {
 		return day;
 	}
     //利用希望日
-	public void setDay(Long day) {
+	public void setDay(String day) {
 		this.day = day;
 	}
 	//利用者名
@@ -60,19 +60,19 @@ public class Meeting {
 		this.name = name;
 	}
     //利用予定人数
-	public int getPeople() {
+	public Integer getPeople() {
 		return people;
 	}
     //利用予定人数
-	public void setPeople(int people) {
+	public void setPeople(Integer people) {
 		this.people = people;
 	}
 	//携帯番号
-	public int getPhone() {
+	public String getPhone() {
 		return phone;
 	}
 	//携帯番号
-	public void setPhone(int phone) {
+	public void setPhone(String phone) {
 		this.phone = phone;
 	}
 

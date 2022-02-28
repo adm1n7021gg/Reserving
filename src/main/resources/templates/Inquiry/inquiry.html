@@ -1,62 +1,51 @@
-<!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org"
-	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-	layout:decorate="Layout/homeLayout">
+       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+       layout:decorate="Layout/homeLayout">
 <head>
-<meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html" charset="utf-8" />
     <link th:href="@{/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css}" rel="stylesheet"></link>
     <script th:src="@{/webjars/jquery/1.11.1/jquery.min.js}"></script>
     <script th:src="@{/webjars/bootstrap/3.3.7-1/js/bootstrap.min.js}"></script>
-    
-<title>Inquiry</title>
+    <script th:src="@{/js/mail.js}"></script>
+    <title>お問い合わせ</title>
 </head>
 <body>
-	<div layout:fragment="contents">
-		<div class="Form">
-			<div class="Form-Item">
-				<p class="Form-Item-Label">
-			 <table class="table table-bordered table-hover">
-			 <!-- 氏名 -->
-				<tr>
-                    <th class="active col-sm-3">氏名</th>
-                    <td>
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="山田　太郎" />
-                        </div>
-                    </td>
-                </tr>
-           <!-- 電話番号 -->
-                <tr>
-                    <th class="active">電話番号</th>
-                    <td>
-                        <div class="form-group">
-                            <input type="text" class="form-control"placeholder="xxxx@xxx.co.jp" />
-                        </div>
-                    </td>
-               </tr>
-           <!-- メールアドレス-->
-               <tr>
-                    <th class="active">携帯電話番号</th>
-                    <td>
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="xxx-xxxx-xxxxx" />
-                        </div>
-                    </td>
-              </tr>
-           <!-- 備考欄 -->
-               <tr>
-                    <th class="active">お問い合わせ内容</th>
-                    <td>
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="お問い合わせ内容" />
-                        </div>
-                        <br>※管理規約上に関するご質問はQ＆Aをご覧ください
-                        <br><a th:href="@{'/home'}">よくあるQ＆A</a>
-                    </td>
-              </tr>
-        </table>
-           </div>
-		</div>
-	</div>
-</body>
+  <div layout:fragment="contents">
+  <div class="container">
+    <h1 class="pb-2 mt-4 mb-2 border-bottom border-primary">
+      お問い合わせ
+    </h1>
+    <div>
+      <p>以下を入力して送信ボタンをクリックしてください。</p>
+      <form name="contactform" id="contactform" role="form">
+        <div class="form-group">
+          <label for="inputName" class="col-sm-3">お名前</label>
+          <div class="col-sm-9">
+            <input type="text" class="form-control" name="name" 
+                   placeholder="お名前" value="">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="inputEmail" class="col-sm-3">メールアドレス</label>
+          <div class="col-sm-9">
+            <input type="email" class="form-control" name="email" 
+                   placeholder="メールアドレス" value="">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="inputMessage" class="col-sm-3">お問い合わせ内容</label>
+          <div class="col-sm-9">
+            <textarea class="form-control" name="message" rows="5">
+            </textarea>
+          </div>
+        </div>
+        <div class="text-center">
+          <button type="button" name="btnSubmit" 
+                  class="btn btn-success" id="btnSend">送信する</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  </div>
+  </body>
 </html>

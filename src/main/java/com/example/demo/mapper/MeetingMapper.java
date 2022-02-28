@@ -10,7 +10,7 @@ import com.example.demo.domain.Meeting;
 public interface MeetingMapper {
 	List<Meeting> findAll();
 	
-	 Meeting selectOne(Long id);
+	 Meeting selectOne(String id);
 	
 	void insert(Meeting meeting);
 	

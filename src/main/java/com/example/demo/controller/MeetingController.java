@@ -40,20 +40,20 @@ public class MeetingController {
 
 	/// --①詳細表示--///
 	@GetMapping("{id}")
-	public String show(@PathVariable Long id, Model model) {
+	public String show(@PathVariable String id, Model model) {
 		model.addAttribute("meeting", meetingService.selectOne(id));
 		return "meetings/show";
 	}
 
 	/// --②-1編集（更新）--///
 	@GetMapping("{id}/edit")
-	public String edit(@PathVariable Long id, @ModelAttribute("meeting") Meeting meeting, Model model) {
+	public String edit(@PathVariable String id, @ModelAttribute("meeting") Meeting meeting, Model model) {
 		model.addAttribute("meeting", meetingService.selectOne(id));
 		return "meetings/edit";
 	}
 	/// --②-2編集（更新）--///
 	@PutMapping("{id}")
-	public String update(@PathVariable Long id, @ModelAttribute("meeting") @Validated Meeting meeting,
+	public String update(@PathVariable String id, @ModelAttribute("meeting") @Validated Meeting meeting,
 			BindingResult result, Model model) {
 		if (result.hasErrors()) {
 			model.addAttribute("meeting", meeting);

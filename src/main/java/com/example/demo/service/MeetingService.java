@@ -23,7 +23,7 @@ public class MeetingService {
 
 	//一件取得
 	@Transactional
-	public Meeting selectOne(Long id) {
+	public Meeting selectOne(String id) {
 		return meetingMapper.selectOne(id);
 	}
 

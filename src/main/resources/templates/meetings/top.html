@@ -11,17 +11,10 @@
 </head>
 <body>
   <div layout:fragment="contents">
-	<nav class="navbar navbar-inverse">
-		<div class="container">
-			<div class="navbar-header">
-				<a class="navbar-brand" href="/meetings">予約リクエスト管理デモ</a>
-			</div>
-		</div>
-    </nav>
 	<div class="container">
 		<div class="card card-primary mb-3">
   			<div class="card-header">
-  				<h5 class="card-title">集会室利用リクエストリスト<a href="meetings/new" class="btn btn-success float-right">新規</a></h5>
+  				<h5 class="card-title">集会室利用リクエスト<a href="meetings/new" class="btn btn-success float-right">新規</a></h5>
   			</div>
   			<div class="card-body" th:if="!${meetings.size()}">
      			<p>リクエストがありません。</p>
@@ -35,7 +28,7 @@
          				<th style="width: 20%">利用者名</th>
          				<th style="width: 10%">利用予定人数</th>
          				<th style="width: 20%">連絡先</th>
-         				<th style="width: 30%"></th>
+         				<th style="width: 30%">操作</th>
        				</tr>
      			</thead>
      			<tbody>

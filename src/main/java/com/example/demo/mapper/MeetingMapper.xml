@@ -3,11 +3,11 @@
 <mapper namespace="com.example.demo.mapper.MeetingMapper">
 	<select id="findAll" resultType="com.example.demo.domain.Meeting">select * from meeting</select>
 	
-	<select resultType="com.example.demo.domain.Meeting" id="selectOne">select * from item where id= #{id}</select>
+	<select resultType="com.example.demo.domain.Meeting" id="selectOne">select * from meeting where id= #{id}</select>
 	
-	<insert keyProperty="id" id="save">insert into meeting(roomid,id,day,name,people,phone) values(#{roomid}, #{id}, #{day},#{name},#{people},#{phone})</insert>
+	<insert keyProperty="id" id="insert">insert into meeting(roomid,id,day,name,people,phone) values(#{roomid}, #{id}, #{day},#{name},#{people},#{phone})</insert>
 	
-	<update id="update">update item set roomid=#{roomid}, id=#{id}, day=#{day}, name=#{name}, people=#{people}, phone=#{phone}    where id= #{id}</update>
+	<update id="update">update meeting set id=#{roomid}, id=#{id}, day=#{day}, name=#{name}, people=#{people}, phone=#{phone}    where id= #{id}</update>
 	
-	<delete id="delete">delete from item where id = #{id}</delete>
+	<delete id="delete">delete from meeting where id = #{id}</delete>
 </mapper>
