@@ -22,7 +22,7 @@
             <div class="navbar-header">
                 <a class="navbar-brand" href="#">共用施設予約システム</a>
             </div>
-            <form method="post" th:action="@{/login}">
+            <form method="post" th:href="@{/logout}" >
                 <button class="btn btn-link pull-right navbar-brand" type="submit">
                     ログアウト
                 </button>
@@ -38,6 +38,7 @@
                     <li role="presentation">
                         <a th:href="@{'/'}">ホーム</a>
                         <a th:href="@{'/meetings'}">集会室予約</a>
+                        <a th:href="@{'/Adming/Users/list'}">ユーザー一覧</a>
                         <a th:href="@{'/Inquiry/inquiry'}">お問い合わせ</a>
                     </li>
                 </ul>
