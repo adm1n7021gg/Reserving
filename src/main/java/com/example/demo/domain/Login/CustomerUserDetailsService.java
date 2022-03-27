@@ -1,11 +1,16 @@
 package com.example.demo.domain.Login;
 
 import java.util.Collections;
+import java.util.List;
 
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
+
+import com.example.demo.mapper.Register.UserMapper;
 
 import lombok.RequiredArgsConstructor;
 
@@ -13,16 +18,16 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class CustomerUserDetailsService implements UserDetailsService{
 	
-	private final UserRepository userRepository;
+	private final UserMapper userMapper;
 	
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-		return userRepository.findByUsername(username)
+		return userMapper.findByUsername(username)
 		         .map(
 		        		 user ->new CustomUserDetails(
 		        		        user.getUsername(),
 		        		        user.getPassword(),
-		        		        Collections.emptyList()
+		        		        toGrantedAuthority(user.getAuthority())
 		        		 )
 		         )
                  .orElseThrow(
@@ -31,7 +36,9 @@ public class CustomerUserDetailsService implements UserDetailsService{
                 		 )
                 );
 	}
-		
+		private List<GrantedAuthority> toGrantedAuthority(User.Authority authority){
+			return Collections.singletonList(new SimpleGrantedAuthority(authority.name()));
+		}
 
 	
 }

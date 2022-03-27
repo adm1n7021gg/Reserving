@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.demo.mapper.MeetingMapper">
-	<select id="findAll" resultType="com.example.demo.domain.Meeting">select * from meeting</select>
+	<select id="findAll" resultType="com.example.demo.domain.Login.User">select * from users</select>
 	
-	<select resultType="com.example.demo.domain.Meeting" id="selectOne">select * from meeting where id= #{id}</select>
+	<select resultType="com.example.demo.domain.Login.User" id="Select">select * from users where username= #{username}</select>
 	
-	<insert keyProperty="id" id="insert">insert into meeting(roomid,id,day,name,people,phone) values(#{roomid}, #{id}, #{day},#{name},#{people},#{phone})</insert>
+	<insert keyProperty="id" id="insert">insert into users(username,password) values(#{username}, #{password},)</insert>
 	
-	<update id="update">update meeting set id=#{roomid}, id=#{id}, day=#{day}, name=#{name}, people=#{people}, phone=#{phone}    where id= #{id}</update>
-	
-	<delete id="delete">delete from meeting where id = #{id}</delete>
 </mapper>

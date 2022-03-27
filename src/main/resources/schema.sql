@@ -13,4 +13,5 @@ CREATE TABLE IF NOT EXISTS meeting (
 CREATE TABLE IF NOT EXISTS users(
   username VARCHAR(64) NOT NULL primary key,
   password VARCHAR(128) NOT NULL
+  authority enum('ADMIN','USER')not null
 );
